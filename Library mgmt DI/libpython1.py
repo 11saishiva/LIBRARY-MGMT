@@ -13,7 +13,6 @@ root.configure(bg='black')  # Background color-#050b24
 title_label = tk.Label(root, text="LIBRARY MANAGEMENT SYSTEM", font=("Courier New", 24,"bold"), bg='#f0f0f0')
 title_label.pack(pady=60)
 
-# Define the function to add books
 def add_book_form():
     add_book_window = tk.Toplevel(root)
     add_book_window.title("Add Book")
@@ -47,7 +46,6 @@ def add_book_form():
 
     tk.Button(add_book_window, text="Add Book", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_book).grid(row=4, column=1, padx=10, pady=20, sticky=E)
 
-# Define the function to add members
 def add_member_form():
     add_member_window = tk.Toplevel(root)
     add_member_window.title("Add Member")
@@ -81,7 +79,6 @@ def add_member_form():
 
     tk.Button(add_member_window, text="Add Member", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_member).grid(row=4, column=1, padx=10, pady=20, sticky=E)
 
-# Define the function to borrow books
 def borrow_book_form():
     borrow_book_window = tk.Toplevel(root)
     borrow_book_window.title("Borrow Book")
@@ -105,7 +102,6 @@ def borrow_book_form():
 
     tk.Button(borrow_book_window, text="Borrow Book", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_borrow).grid(row=2, column=1, padx=10, pady=20, sticky=E)
 
-# Define the function to return books
 def return_book_form():
     return_book_window = tk.Toplevel(root)
     return_book_window.title("Return Book")
@@ -124,7 +120,6 @@ def return_book_form():
 
     tk.Button(return_book_window, text="Return Book", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_return).grid(row=1, column=1, padx=10, pady=20, sticky=E)
 
-# Define the function to display books
 def display_books():
     books = mgmt1.get_books()
     display_books_window = tk.Toplevel(root)
@@ -152,7 +147,6 @@ def display_books():
         tk.Label(frame, text=year, font=("Courier New", 12), width=10, bg='#e0f7fa').grid(row=i+1, column=4, padx=5, pady=5)
         tk.Label(frame, text=availability, font=("Courier New", 12), width=10, bg='#e0f7fa').grid(row=i+1, column=5, padx=5, pady=5)
 
-# Define the function to display members
 def display_members():
     members = mgmt1.get_members()
     display_members_window = tk.Toplevel(root)
@@ -203,7 +197,6 @@ def remove_book_form():
 
     tk.Button(remove_book_window, text="Remove Book", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_remove_book).grid(row=1, column=1, padx=10, pady=20, sticky=E)
 
-# Define the function to remove members
 def remove_member_form():
     remove_member_window = tk.Toplevel(root)
     remove_member_window.title("Remove Member")
@@ -229,12 +222,15 @@ def remove_member_form():
         remove_member_window.destroy()
 
     tk.Button(remove_member_window, text="Remove Member", font=("Courier New", 12), bg="#586a69", fg="black", command=submit_remove_member).grid(row=1, column=1, padx=10, pady=20, sticky=E)
+
 # Create a frame to hold buttons in a grid layout
+
 button_frame = tk.Frame(root, bg='#e0f7fa')
 button_frame.pack(padx=50, pady=40)
 
 
 # Add buttons to the frame
+
 tk.Button(button_frame, text="Add Book", font=("Courier New", 14), bg="#80555d", fg="black",width=15, height=2, command=add_book_form).grid(row=0, column=0, padx=10, pady=10)
 tk.Button(button_frame, text="Add Member", font=("Courier New", 14), bg="#80555d", fg="black",width=15, height=2, command=add_member_form).grid(row=0, column=1, padx=10, pady=10)
 tk.Button(button_frame, text="Borrow Book", font=("Courier New", 14), bg="#80555d", fg="black",width=15, height=2, command=borrow_book_form).grid(row=1, column=0, padx=10, pady=10)
