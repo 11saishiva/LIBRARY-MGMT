@@ -49,11 +49,6 @@ def return_book(book_id):
     cursor.execute(sql, (book_id,))
     conn.commit()
 
-# def get_books():
-#     cursor.execute("SELECT BOOK_ID, TITLE, AUTHOR, GENRE, YEAR_PUBLISHED, AVAILABILITY FROM BOOKS")
-#     books = cursor.fetchall()
-#     conn.close()
-#     return books
 def get_books():
     connection = create_connection(host_name, user_name, user_password, db_name)
     if connection:
@@ -68,11 +63,6 @@ def get_books():
             cursor.close()
             connection.close()
 
-# def get_members():
-#     cursor.execute("SELECT MEMBER_ID,MEMBER_NAME,EMAIL,PHONE FROM members")
-#     members = cursor.fetchall()
-#     conn.close()
-#     return members
 def get_members():
     connection = create_connection(host_name, user_name, user_password, db_name)
     if connection:
